@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+html {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1.5;
+  background-color: var(--grey-100);
+  color: var(--grey-500);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 2rem 2rem 2rem rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+}
+
+.verified {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.highlight {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.testimonial {
+  font-weight: 500;
+  color: var(--grey-400);
+}
+
+.card.purple-500 {
+  background-color: var(--purple-500);
+  color: var(--purple-50);
+}
+
+.card.purple-500 .avatar {
+  border-color: var(--purple-300);
+}
+
+.card.purple-500 .testimonial {
+  color: var(--purple-300);
+}
+
+.card.grey-500 {
+  background-color: var(--grey-500);
+  color: var(--white);
+}
+
+.card.grey-500 .avatar {
+  border-color: var(--dark-blue);
+}
+
+.card.grey-500 .testimonial,
+.card.grey-500 .verified {
+  color: var(--grey-200);
+}
+
+.card.dark-blue {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.card.dark-blue .avatar {
+  border-color: var(--purple-500);
+}
+
+.card.dark-blue .testimonial {
+  color: var(--grey-200);
+}
+
+@media (min-width: 43rem) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card.purple-500 {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+  .card.card.dark-blue {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+  .card.white-last {
+    grid-column: 1/ 4;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (min-width: 80rem) {
+  .container {
+    max-width: 90rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  .card.purple-500 {
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: right 4rem top 0;
+    background-size: 8.75rem;
+  }
+  .card.white-first {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .card.white-last {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+  }
+}
