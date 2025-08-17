@@ -10,11 +10,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./simages/screenshot.png)
+![](./images/screenshot.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://cassianebel.github.io/testimonials-grid-section-main/
 
 ### Built with
 
